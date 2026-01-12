@@ -1,15 +1,18 @@
 "use client";
-import React from 'react';
-import { FiAward, FiExternalLink, FiCalendar } from "react-icons/fi";
-// Pastikan path data ini benar sesuai struktur foldermu
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion"; 
+import { FiAward, FiEye, FiCalendar, FiX } from "react-icons/fi";
+// Pastikan path import ini sesuai dengan struktur foldermu
 import { certificatesData } from '../data/certificates'; 
 
 const CertificateGrid = () => {
+  // State untuk menyimpan URL gambar yang sedang dibuka (Popup)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
-    // PENTING: Tambahkan id="certificates" disini agar DockNav bisa scroll kesini
     <section id="certificates" className="py-20 px-6 md:px-12 max-w-6xl mx-auto">
       
-      {/* Title Section */}
+      {/* --- TITLE SECTION --- */}
       <div className="flex items-end gap-4 mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-[#1D1D1F] dark:text-black">
             Certifications & Awards
@@ -19,7 +22,7 @@ const CertificateGrid = () => {
         </span>
       </div>
 
-      {/* GRID SYSTEM */}
+      {/* --- GRID SYSTEM --- */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {certificatesData.map((cert) => (
@@ -37,7 +40,7 @@ const CertificateGrid = () => {
                 ${cert.isDark ? 'bg-blue-600' : 'bg-orange-400'}
             `} />
 
-            {/* Top Content: Icon & Issuer */}
+            {/* Top Content: Icon & Date */}
             <div className="relative z-10 flex justify-between items-start mb-6">
                 <div className={`
                     w-12 h-12 rounded-xl flex items-center justify-center text-xl backdrop-blur-md border
@@ -46,7 +49,6 @@ const CertificateGrid = () => {
                     <FiAward />
                 </div>
                 
-                {/* Date Badge */}
                 <div className={`
                     flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border
                     ${cert.isDark ? 'bg-white/5 border-white/10 text-gray-300' : 'bg-gray-50 border-gray-200 text-gray-500'}
@@ -67,19 +69,64 @@ const CertificateGrid = () => {
                     {cert.description}
                 </p>
 
-                {/* Link/Action */}
-                <a href={cert.link} target="_blank" rel="noopener noreferrer" className={`
-                    inline-flex items-center gap-2 text-sm font-semibold hover:underline
-                    ${cert.isDark ? 'text-blue-400' : 'text-blue-600'}
-                `}>
-                    View Credential <FiExternalLink />
-                </a>
+                {/* --- ACTION BUTTON (Membuka Modal) --- */}
+                <button 
+                    onClick={() => setSelectedImage(cert.image)} 
+                    className={`
+                        inline-flex items-center gap-2 text-sm font-semibold hover:underline cursor-pointer bg-transparent border-none p-0 outline-none
+                        ${cert.isDark ? 'text-blue-400' : 'text-blue-600'}
+                    `}
+                >
+                    View Credential <FiEye />
+                </button>
             </div>
-            
           </div>
         ))}
-
       </div>
+
+      {/* --- MODAL / POPUP OVERLAY --- */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)} // Tutup jika klik area hitam
+            className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+          >
+            {/* Wadah Gambar */}
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()} // Mencegah tutup jika klik gambar
+              className="relative max-w-5xl w-full max-h-[85vh] bg-transparent flex flex-col items-center"
+            >
+              
+              {/* Tombol Close Floating */}
+              <button 
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 md:top-4 md:right-4 z-50 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors border border-white/20 backdrop-blur-md"
+              >
+                <FiX size={24} />
+              </button>
+
+              {/* Gambar Full Size */}
+              <img 
+                src={selectedImage} 
+                alt="Certificate Evidence" 
+                className="w-auto h-auto max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl border border-white/10"
+              />
+              
+              <p className="text-white/60 text-sm mt-4">
+                Klik di luar gambar untuk menutup
+              </p>
+
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
 };
