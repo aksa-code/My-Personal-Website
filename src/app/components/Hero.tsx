@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-start pt-4 md:pt-12 pb-20 overflow-hidden"
+      className="relative h-auto md:min-h-screen flex items-start pt-24 md:pt-12 pb-10 md:pb-20 overflow-hidden"
     >
       
       <div className="max-w-screen-2xl mx-auto px-6 md:px-8 w-full">
@@ -41,6 +41,7 @@ const Hero = () => {
                {hero.status}
              </motion.div>
 
+             {/* Headline */}
              <motion.h1 
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
@@ -53,19 +54,31 @@ const Hero = () => {
                </span>
              </motion.h1>
 
+             {/* --- INSERT NAME HERE (BARU) --- */}
+             <motion.h2 
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.5, delay: 0.2 }} // Delay urutan ke-2
+               className="text-xl md:text-2xl font-semibold text-gray-800 mb-4"
+             >
+               {hero.name}
+             </motion.h2>
+
+             {/* Description */}
              <motion.p 
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.5, delay: 0.2 }}
+               transition={{ duration: 0.5, delay: 0.3 }} // Delay digeser jadi 0.3
                className="text-lg text-gray-500 leading-relaxed max-w-xl mb-8"
              >
                {hero.desc}
              </motion.p>
 
+             {/* Buttons & Socials */}
              <motion.div 
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.5, delay: 0.3 }}
+               transition={{ duration: 0.5, delay: 0.4 }} // Delay digeser jadi 0.4
                className="flex flex-wrap items-center gap-4"
              >
                <a 
@@ -95,12 +108,11 @@ const Hero = () => {
              </motion.div>
           </div>
 
-          {/* --- 2. IMAGE CONTENT (FIXED SHADOW) --- */}
+          {/* --- 2. IMAGE CONTENT --- */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            // PERUBAHAN DISINI: Menambahkan 'p-8' agar shadow tidak terpotong container
+            transition={{ duration: 0.8, delay: 0.5 }} // Delay image paling akhir
             className="hidden md:flex w-full md:w-[45%] justify-end relative p-8"
           >
              <div className="relative z-10 w-full max-w-[450px] aspect-[4/5] rounded-[40px] overflow-hidden bg-gray-100 border border-gray-200 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 ease-out">

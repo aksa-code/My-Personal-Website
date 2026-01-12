@@ -4,10 +4,10 @@ export const certificatesData = [
   {
     id: 1,
     title: "IT Specialist: Databases",
-    issuer: "Pearson VUE / Certiport",
+    issuer: "Certiport",
     date: "Valid until 2030",
     description: "Certified proficient in database design, query optimization, and management.",
-    image: "/images/badge-db.png", // Ganti dengan path gambarmu
+    image: "/images/Certificates/Certiport.jpg", // Ganti dengan path gambarmu
     link: "#",
     isDark: true // Opsi untuk bikin kartu warna hitam (Premium)
   },
@@ -15,9 +15,9 @@ export const certificatesData = [
     id: 2,
     title: "FITCOM Finalist 3.0",
     issuer: "Universitas Dinamika",
-    date: "Issued 2024",
+    date: "Oct 2025",
     description: "Finalis lomba Web Programming tingkat nasional (Top 10 Team).",
-    image: "/images/157.jpg", // Sesuaikan nama file gambar
+    image: "/images/Certificates/WebDev.png", // Sesuaikan nama file gambar
     link: "#",
     isDark: false
   },
@@ -31,5 +31,5 @@ export const certificatesData = [
 
 export const techStackData = [
   "Next.js", "React", "TypeScript", "Tailwind CSS", 
-  "Laravel", "Flutter", "PostgreSQL", "Figma", "Git", "Midtrans"
+  "Laravel", "Flutter", "Figma", "Git"
 ];

@@ -8,14 +8,8 @@ export const portfolioData = {
     subtitle: "& UI/UX Enthusiast.", 
     
     // DESKRIPSI
-    desc: "Siswa Software Engineering SMK Telkom Malang yang menjembatani logika backend yang kuat (Certified Database Specialist) dengan estetika frontend modern. Saya membangun aplikasi Web & Mobile yang tidak hanya berfungsi tanpa error, tapi juga intuitif dan memanjakan mata pengguna.",
+    desc: "Saya adalah siswa Software Engineering di SMK Telkom Malang yang memiliki ketertarikan mendalam pada dunia Fullstack. Berbekal sertifikasi IT Specialist: Databases, saya menggabungkan logika backend yang kokoh dengan estetika UI/UX modern. Saya percaya bahwa aplikasi yang hebat lahir dari kode yang efisien dan desain yang memanjakan pengguna.",
     
-    // STATS
-    stats: [
-      { value: "10+", label: "Deployed Projects" },
-      { value: "TOP 10", label: "National Finalist" },
-      { value: "100%", label: "Pixel Perfect" }
-    ],
     
     // SOCIALS
     socials: [
@@ -51,7 +45,7 @@ export const portfolioData = {
       description: "Aplikasi mobile yang menghubungkan perusahaan (HRD) dan pencari kerja, memungkinkan perusahaan memposting lowongan, mengelola pelamar, serta pengguna melamar pekerjaan dan memantau status lamaran secara real-time melalui sistem berbasis API.",
       image: "/images/Projects/Project 3.png",
       tech: ["Flutter", "Laravel", "Postman", "REST API"],
-      link: "#"
+      link: "https://github.com/aksa-code/Job-Seeker-Front-end-"
     },
   ],
 };

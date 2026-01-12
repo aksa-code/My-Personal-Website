@@ -11,7 +11,6 @@ const getIcon = (name: string) => {
   if (n.includes('next')) return <SiNextdotjs className="text-black" />;
   if (n.includes('tailwind')) return <SiTailwindcss className="text-cyan-400" />;
   if (n.includes('laravel')) return <SiLaravel className="text-red-500" />;
-  if (n.includes('sql')) return <SiMysql className="text-blue-600" />;
   if (n.includes('flutter')) return <SiFlutter className="text-blue-400" />;
   if (n.includes('figma')) return <SiFigma className="text-pink-500" />;
   if (n.includes('git')) return <SiGithub className="text-gray-800" />;
