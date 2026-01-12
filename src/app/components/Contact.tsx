@@ -1,12 +1,16 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from "framer-motion";
-import { FiMail, FiMapPin, FiSend, FiCopy, FiCheck } from "react-icons/fi";
+import { FiMail, FiMapPin, FiSend, FiCopy, FiCheck, FiLoader } from "react-icons/fi";
+import emailjs from '@emailjs/browser'; // Pastikan sudah install: npm install @emailjs/browser
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null); 
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [copied, setCopied] = useState(false);
-  const MY_EMAIL = "emailkamu@example.com"; 
+  const [loading, setLoading] = useState(false); 
+  
+  const MY_EMAIL = "danadyaksamorello@gmail.com"; 
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(MY_EMAIL);
@@ -20,8 +24,27 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Data:", form);
-    alert("Pesan terkirim! (Demo)");
+    setLoading(true);
+
+    // --- GANTI DENGAN DATA DARI EMAILJS DASHBOARD KAMU ---
+    const SERVICE_ID = 'service_n6juihy';  
+    const TEMPLATE_ID = 'template_n71cus7'; 
+    const PUBLIC_KEY = 'pwSjnPK4AAmLfNkuf';
+
+    if (formRef.current) {
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+        .then((result) => {
+            console.log(result.text);
+            alert("Pesan sudah masuk! Saya akan segera menghubungi Anda.");
+            setForm({ name: '', email: '', message: '' }); // Reset form
+        }, (error) => {
+            console.log(error.text);
+            alert("Gagal mengirim pesan. Silakan coba lagi atau email manual.");
+        })
+        .finally(() => {
+            setLoading(false);
+        });
+    }
   };
 
   return (
@@ -30,10 +53,6 @@ const Contact = () => {
       {/* Background Decor */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full blur-[120px] -z-10 opacity-30 pointer-events-none"></div>
 
-      {/* --- UPDATE WIDTH --- 
-          1. max-w-6xl : Jauh lebih ramping (standar container website).
-          2. px-6 md:px-12 : Padding samping agar konten tidak mepet pinggir layar HP.
-      */}
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -53,7 +72,6 @@ const Contact = () => {
             </p>
 
             <div className="space-y-5 max-w-sm">
-              
               {/* Card Email */}
               <div 
                 onClick={handleCopyEmail}
@@ -84,11 +102,10 @@ const Contact = () => {
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Based in</p>
                   <p className="text-base md:text-lg font-semibold text-gray-900">
-                    Jakarta, Indonesia
+                    Malang, Indonesia
                   </p>
                 </div>
               </div>
-
             </div>
           </motion.div>
 
@@ -101,7 +118,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="bg-white rounded-[32px] p-8 shadow-xl border border-gray-100"
           >
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               
               {/* Name */}
               <div>
@@ -115,6 +132,7 @@ const Contact = () => {
                   placeholder="John Doe"
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-black/10 focus:ring-0 transition-all outline-none font-medium text-sm md:text-base"
                   required 
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -130,6 +148,7 @@ const Contact = () => {
                   placeholder="john@mail.com"
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-black/10 focus:ring-0 transition-all outline-none font-medium text-sm md:text-base"
                   required 
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -145,15 +164,22 @@ const Contact = () => {
                   placeholder="Ceritakan detail proyekmu..."
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-black/10 focus:ring-0 transition-all outline-none font-medium text-sm md:text-base resize-none"
                   required 
+                  suppressHydrationWarning
                 />
               </div>
 
               {/* Submit Button */}
               <button 
                 type="submit"
-                className="w-full py-3.5 bg-[#1D1D1F] text-white rounded-xl font-bold text-base hover:bg-black hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg"
+                disabled={loading}
+                className="w-full py-3.5 bg-[#1D1D1F] text-white rounded-xl font-bold text-base hover:bg-black hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
+                suppressHydrationWarning
               >
-                Kirim Pesan <FiSend />
+                {loading ? (
+                    <>Sending... <FiLoader className="animate-spin" /></>
+                ) : (
+                    <>Kirim Pesan <FiSend /></>
+                )}
               </button>
 
             </form>

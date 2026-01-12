@@ -4,11 +4,11 @@ export const portfolioData = {
     name: "Danadyaksa Morello Hisyam Prayata",
     
     // JUDUL UTAMA
-    title: "Fullstack Developer",
-    subtitle: "& UI/UX Enthusiast.", 
+    title: "Web Developer",
+    subtitle: "& Graphic Design Enthusiast.", 
     
     // DESKRIPSI
-    desc: "Saya adalah siswa Software Engineering di SMK Telkom Malang yang memiliki ketertarikan mendalam pada dunia Fullstack. Berbekal sertifikasi IT Specialist: Databases, saya menggabungkan logika backend yang kokoh dengan estetika UI/UX modern. Saya percaya bahwa aplikasi yang hebat lahir dari kode yang efisien dan desain yang memanjakan pengguna.",
+    desc: "Saya adalah siswa Software Engineering di SMK Telkom Malang yang memiliki ketertarikan pada dunia Web Dev. Berbekal sertifikasi IT Specialist: Databases, saya menggabungkan logika backend yang kokoh dengan estetika UI/UX modern. Saya percaya bahwa aplikasi yang hebat lahir dari kode yang efisien dan desain yang memanjakan pengguna.",
     
     
     // SOCIALS
