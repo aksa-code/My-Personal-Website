@@ -17,7 +17,7 @@ export const certificatesData = [
     issuer: "Universitas Dinamika",
     date: "Oct 2025",
     description: "Finalis lomba Web Programming tingkat nasional (Top 10 Team).",
-    image: "/images/Certificates/WebDev.png", // Sesuaikan nama file gambar
+    image: "/images/Certificates/WebDev.jpg", // Sesuaikan nama file gambar
     link: "#",
     isDark: false
   },
