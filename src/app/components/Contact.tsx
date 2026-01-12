@@ -65,7 +65,7 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#1D1D1F] mb-6 tracking-tight">
-              Let's work together.
+              Let&apos;s work together.
             </h2>
             <p className="text-lg text-gray-500 mb-8 leading-relaxed max-w-md">
               Punya ide proyek menarik? Saya siap membantu merealisasikannya dengan kode yang rapi dan desain yang memikat.
