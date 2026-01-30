@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 // 1. Tambahkan FiAward ke import
-import { FiHome, FiGrid, FiMail, FiAward } from "react-icons/fi"; 
+import { FiHome, FiGrid, FiMail, FiAward } from "react-icons/fi";
 
 const DockNav = () => {
   const navItems = [
@@ -14,21 +14,21 @@ const DockNav = () => {
 
   // --- FUNGSI SCROLL ---
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault(); 
-    
-    const targetId = href.replace("#", ""); 
+    e.preventDefault();
+
+    const targetId = href.replace("#", "");
     const elem = document.getElementById(targetId);
 
     if (elem) {
-        elem.scrollIntoView({ behavior: "smooth", block: "start" });
+      elem.scrollIntoView({ behavior: "smooth", block: "start" });
     } else if (href === "#home" || targetId === "home") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   return (
     <div className="fixed bottom-8 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
-      <motion.div 
+      <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
@@ -45,7 +45,7 @@ const DockNav = () => {
             <span className="text-gray-400 group-hover:text-white transition-colors">
               {item.icon}
             </span>
-            
+
             {/* Tooltip */}
             <span className="absolute -top-10 px-2 py-1 bg-black text-white text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
               {item.name}
