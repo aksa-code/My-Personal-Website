@@ -33,7 +33,7 @@ export const portfolioData: { hero: HeroData; projects: Project[] } = {
     name: "Danadyaksa Morello Hisyam Prayata",
     title: "Crafting Visuals",
     subtitle: "That Tell Stories",
-    desc: "Seorang Graphic Designer dengan pengalaman lebih dari dua tahun dalam bidang desain visual. Terampil menggunakan Figma serta memiliki pemahaman dasar terhadap Adobe Illustrator, After Effects, dan DaVinci Resolve. Berfokus pada pembuatan konten visual yang menarik untuk kebutuhan media sosial dan proyek branding, serta terbiasa bekerja secara kolaboratif dalam berbagai proyek kreatif.",
+    desc: "Lulusan Rekayasa Perangkat Lunak dari SMK Telkom Malang dengan minat pada desain visual dan pengembangan digital. Menguasai Figma, Adobe Illustrator, After Effects, dan DaVinci Resolve, serta memiliki dasar pengembangan aplikasi menggunakan Flutter dan pembuatan website dengan JavaScript. Berfokus pada desain grafis, branding, dan strategi media sosial untuk menciptakan identitas visual yang kuat dan solusi digital yang fungsional.",
     socials: [
       { name: "GitHub", url: "https://github.com/aksa-code" },
       { name: "Instagram", url: "https://www.instagram.com/danady_aksaa/" },
@@ -43,6 +43,86 @@ export const portfolioData: { hero: HeroData; projects: Project[] } = {
   },
 
   projects: [
+    {
+      id: 12,
+      title: "Job Seekers: Find Your Next Career",
+      subtitle: "Job Recruitment Platform (UKK)",
+      category: ["Mobile Dev", "Fullstack"],
+      image: "/images/Cover/Fast Job.png",
+      link: "#", // Isi link demo/repo jika ada
+      gallery: [
+        "/images/Gallery/Fast Job/Fast Job - 1.png",
+        "/images/Gallery/Fast Job/Fast Job - 2.png",
+        "/images/Gallery/Fast Job/Fast Job - 3.png",
+        "/images/Gallery/Fast Job/Fast Job - 4.png",
+        "/images/Gallery/Fast Job/Fast Job - 5.png",
+        "/images/Gallery/Fast Job/Fast Job - 6.png",
+      ],
+      role: "Fullstack Mobile Developer",
+      year: "2025",
+      techStack: ["Flutter (Dart)", "Laravel (Backend)", "MySQL", "REST API"],
+      description: "Aplikasi pencarian kerja yang dikembangkan sebagai proyek Uji Kompetensi Keahlian (UKK). Sistem ini menghubungkan pelamar kerja dengan perusahaan melalui aplikasi mobile yang intuitif.\n\nSisi Frontend dibangun menggunakan Flutter untuk performa native, sedangkan Backend menggunakan Laravel sebagai penyedia REST API yang menangani autentikasi, manajemen lowongan, dan status lamaran.",
+      features: [
+        "Swipe to Apply: Melamar kerja dengan interaksi modern.",
+        "CV Generator: Membuat CV standar otomatis dari profil pengguna.",
+        "Company Dashboard: Panel admin untuk HRD mengelola pelamar.",
+        "Real-time Status: Notifikasi update status lamaran (Diterima/Ditolak)."
+      ],
+      challenge: "Tantangan paling teknis adalah debugging 'Invisible Error' pada sisi Backend Laravel. Sempat terjadi kegagalan pemanggilan API tanpa pesan error yang jelas, yang ternyata disebabkan oleh urutan (ordering) definisi Route di `api.php`. Kesalahan posisi baris kode ini menyebabkan request tertukar/tidak dikenali, sebuah bug sepele namun sangat *tricky* untuk dilacak."
+    },
+    {
+      id: 11, 
+      title: "Pupuk Smart: Modern Farming Ecosystems",
+      subtitle: "Inventory & Warehouse Management",
+      category: ["Web Dev", "Fullstack"],
+      image: "/images/Cover/Pupuk Smart.png",
+      link: "#", 
+      gallery: [
+        "/images/Gallery/Pupuk Smart/Pupuk Smart - 1.png",
+        "/images/Gallery/Pupuk Smart/Pupuk Smart - 2.png",
+        "/images/Gallery/Pupuk Smart/Pupuk Smart - 3.png",
+        "/images/Gallery/Pupuk Smart/Pupuk Smart - 4.png",
+        "/images/Gallery/Pupuk Smart/Pupuk Smart - 5.png",
+        "/images/Gallery/Pupuk Smart/Pupuk Smart - 6.png",
+        "/images/Projects/Pupuk Smart - 7.png"
+      ],
+      role: "Fullstack Developer",
+      year: "2024",
+      techStack: ["Laravel", "MySQL", "Bootstrap/Tailwind"], 
+      description: "Sistem manajemen stok dan distribusi pupuk berbasis web yang dirancang untuk kompetisi. Fokus utama aplikasi ini adalah pengelompokan gudang berdasarkan jenis produk untuk menjaga kualitas pupuk.\n\nSistem mengatur logika penyimpanan spesifik, misalnya Gudang A dikhususkan untuk Pupuk Kering, sedangkan Gudang B untuk Pupuk Basah, sehingga alur keluar-masuk barang menjadi lebih terorganisir dan minim kesalahan.",
+      features: [
+        "Multi-Location Warehouse: Manajemen lokasi gudang terpisah.",
+        "Product Categorization: Pemisahan stok Pupuk Basah & Kering.",
+        "Stock Flow: Pencatatan barang masuk (Inbound) & keluar (Outbound).",
+        "Dashboard Admin: Pantau ketersediaan stok di tiap lokasi secara real-time."
+      ],
+      challenge: "Tantangan terbesar adalah tekanan waktu (time constraint) karena proyek ini dikerjakan saat lomba. Saya harus mengimplementasikan logika manajemen stok yang cukup kompleks sambil mempelajari fitur-fitur baru Laravel secara otodidak di tengah kompetisi, yang membuat proses development terasa sangat intens."
+    },
+    {
+      id: 9,
+      title: "Explore Bromo: Your Ultimate Adventure Guide",
+      subtitle: "Interactive Tourism Platform",
+      category: ["Web Dev", "UI Design"], 
+      image: "/images/Cover/Bromo.png",
+      link: "https://www.figma.com/design/kGVo3mRWog4YL0t3Ap65Ls/Bromo-Trip?node-id=0-1&t=KVhs6s7d8QBvDImz-1", 
+      gallery: [
+        "/images/Gallery/Bromo/Bromo - 1.png",
+        "/images/Gallery/Bromo/Bromo - 2.png",
+        "/images/Gallery/Bromo/Bromo - 3.png",
+        "/images/Gallery/Bromo/Bromo - 4.png"
+      ],
+      role: "Frontend Developer",
+      year: "Desember 2025",
+      techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Leaflet Maps"],
+      description: "Platform pariwisata digital yang dirancang untuk memperkenalkan keindahan Taman Nasional Bromo Tengger Semeru. Website ini berfungsi sebagai panduan lengkap bagi wisatawan, mulai dari informasi rute, booking jeep online, hingga virtual tour sederhana.\n\nDesain difokuskan pada penggunaan tipografi yang bersih dan layout gambar yang immersive untuk menonjolkan keindahan alam Bromo.",
+      features: [
+        "Interactive Map: Peta titik wisata & spot sunrise.",
+        "Jeep Booking System: Formulir pemesanan terintegrasi.",
+        "Weather Widget: Info cuaca real-time di area pegunungan.",
+        "Multi-language Support (ID/EN)."
+      ],
+      challenge: "Tantangan terbesar adalah mengoptimalkan performa website (Core Web Vitals) yang memuat banyak aset gambar resolusi tinggi, agar tetap cepat diakses oleh wisatawan yang mungkin memiliki koneksi internet terbatas di area pegunungan."
+    },
     {
       id: 1,
       title: "BacaYuk: Smart Online Reading UI Design.",
@@ -97,59 +177,59 @@ export const portfolioData: { hero: HeroData; projects: Project[] } = {
       ],
       challenge: "Menciptakan pengalaman pengguna (UX) yang mengubah persepsi pengelolaan keuangan yang rumit dan membosankan menjadi aktivitas yang ringan, adiktif, dan mudah dipahami."
     },
-    {
-      id: 3,
-      title: "Dies Natalis Ke-32: Lets Innovate",
-      subtitle: "Celebration of 32 years of innovation and creativity.",
-      role: "Visual Designer & Audio Operator",
-      category: ["Event Branding", "Motion Design", "Audio Production"],
-      image: "/images/Cover/DiesNat.png",
-      link: "https://drive.google.com/drive/folders/1TZ4z2Whseqd4-hSwZOr-i-cawQ8kBy-w?usp=sharing", 
-      gallery: [
-        "/images/Gallery/Diesnat/Diesnat - 1.png",
-        "/images/Gallery/Diesnat/Diesnat - 2.png",
-        "/images/Gallery/Diesnat/Diesnat - 3.png",
-        "/images/Gallery/Diesnat/Diesnat - 4.png",
-      ],
-      year: "Oktober 2024",
-      techStack: ["Adobe Illustrator", "After Effects", "vMix / Spotify for Artists"],
-      description: "Berkontribusi dalam perayaan ulang tahun ke-32 SMK Telkom Malang melalui peran ganda: sebagai desainer visual pada masa pra-acara dan operator audio di Front of House (FOH) pada hari puncak. \n\nSaya bertanggung jawab menciptakan identitas visual seperti design pengumuman Mystery Guest Star, serta memastikan audio tetap terjaga selama acara berlangsung",
-      features: [
-        "Stage Backdrop: Desain visual untuk background kegiatan sebagian acara di panggung",
-        "Guest Star Reveal: Aset desain untuk pengumuman 'Mystery Guest Star' yang membangun antusiasme peserta.",
-        "Motion Graphics: Membuat animasi backdrop untuk suatu band guru yang tampil dipanggung menggunakan After Effects.",
-        "Audio Management (FOH): Mengelola urutan putar audio dan bgm agar sinkron dengan rundown panggung."
-      ],
-      challenge: "Tantangan terbesar adalah kurva pembelajaran yang tajam; ini merupakan pertama kalinya saya menggunakan Adobe Illustrator untuk aset cetak skala besar dan After Effects untuk animasi panggung. \n\nSelain itu, transisi peran dari desainer menjadi operator audio di FOH menuntut ketelitian tinggi dalam sinkronisasi waktu antara visual yang tampil di layar dan audio yang didengar audiens walaupun masih ada beberapa yang miss namun saya masih belajar."
-    },
-    {
-      id: 4,
-      title: "MoBi: Moklet Bilingual Week 2024",
-      subtitle: "Kegiatan tahun Ke-dua Bulan Bahasa Inggris di SMK Telkom Malang dengan tema karnaval dan maskot 'Mobi'.",
-      category: ["Visual Branding"], 
-      image: "/images/Cover/Mobi.png", 
-      link: "https://www.instagram.com/stories/highlights/17870365740253517/", 
-      gallery: [
-        "/images/Gallery/Mobi/Mobi - 1.png",
-        "/images/Gallery/Mobi/Mobi - 2.png",
-        "/images/Gallery/Mobi/Mobi - 3.png",
-        "/images/Gallery/Mobi/Mobi - 4.png",
-        "/images/Gallery/Mobi/Mobi - 5.png",
-        "/images/Gallery/Mobi/Mobi - 6.png",
-        "/images/Gallery/Mobi/Mobi - 7.png"
-      ],
-      role: "Design Team Member",
-      year: "Desember 2024",
-      techStack: ["Figma"],
-      description: "Berkontribusi dalam tim desain untuk 'Moklet Bilingual Week', acara tahunan Bulan Bahasa Inggris yang diselenggarakan oleh English Language Prefect. Dengan mengusung tema karnaval dan maskot 'Mobi', tugas utama saya adalah memastikan seluruh materi visual tampil kohesif dan sesuai dengan arahan branding yang telah ditentukan.",
-      features: [
-        "Mascot Integration: Mengaplikasikan maskot 'Mobi' ke dalam berbagai media promosi.",
-        "Merchandise Design: Menyusun desain untuk kaos acara, lanyard, dan pernak-pernik merchandise lainnya.",
-        "Event Collaterals: Membuat bingkai photobooth dan aset visual pendukung suasana karnaval.",
-        "Digital Presence: Mendesain konten feed Instagram sebagai media informasi utama peserta."
-      ],
-      challenge: "Tantangan dalam proyek ini adalah manajemen tugas terhadap permintaan desain tambahan yang sering kali muncul secara mendadak. Hal ini menuntut tim untuk tetap menjaga fokus dan konsistensi kualitas desain di tengah jadwal produksi yang padat. Selain itu, hasil design feed IG yang telah saya buat belum sepenuhnya terpublish oleh tim Sosmed"
-    },
+    // {
+    //   id: 3,
+    //   title: "Dies Natalis Ke-32: Lets Innovate",
+    //   subtitle: "Celebration of 32 years of innovation and creativity.",
+    //   role: "Visual Designer & Audio Operator",
+    //   category: ["Event Branding", "Motion Design", "Audio Production"],
+    //   image: "/images/Cover/DiesNat.png",
+    //   link: "https://drive.google.com/drive/folders/1TZ4z2Whseqd4-hSwZOr-i-cawQ8kBy-w?usp=sharing", 
+    //   gallery: [
+    //     "/images/Gallery/Diesnat/Diesnat - 1.png",
+    //     "/images/Gallery/Diesnat/Diesnat - 2.png",
+    //     "/images/Gallery/Diesnat/Diesnat - 3.png",
+    //     "/images/Gallery/Diesnat/Diesnat - 4.png",
+    //   ],
+    //   year: "Oktober 2024",
+    //   techStack: ["Adobe Illustrator", "After Effects", "vMix / Spotify for Artists"],
+    //   description: "Berkontribusi dalam perayaan ulang tahun ke-32 SMK Telkom Malang melalui peran ganda: sebagai desainer visual pada masa pra-acara dan operator audio di Front of House (FOH) pada hari puncak. \n\nSaya bertanggung jawab menciptakan identitas visual seperti design pengumuman Mystery Guest Star, serta memastikan audio tetap terjaga selama acara berlangsung",
+    //   features: [
+    //     "Stage Backdrop: Desain visual untuk background kegiatan sebagian acara di panggung",
+    //     "Guest Star Reveal: Aset desain untuk pengumuman 'Mystery Guest Star' yang membangun antusiasme peserta.",
+    //     "Motion Graphics: Membuat animasi backdrop untuk suatu band guru yang tampil dipanggung menggunakan After Effects.",
+    //     "Audio Management (FOH): Mengelola urutan putar audio dan bgm agar sinkron dengan rundown panggung."
+    //   ],
+    //   challenge: "Tantangan terbesar adalah kurva pembelajaran yang tajam; ini merupakan pertama kalinya saya menggunakan Adobe Illustrator untuk aset cetak skala besar dan After Effects untuk animasi panggung. \n\nSelain itu, transisi peran dari desainer menjadi operator audio di FOH menuntut ketelitian tinggi dalam sinkronisasi waktu antara visual yang tampil di layar dan audio yang didengar audiens walaupun masih ada beberapa yang miss namun saya masih belajar."
+    // },
+    // {
+    //   id: 4,
+    //   title: "MoBi: Moklet Bilingual Week 2024",
+    //   subtitle: "Kegiatan tahun Ke-dua Bulan Bahasa Inggris di SMK Telkom Malang dengan tema karnaval dan maskot 'Mobi'.",
+    //   category: ["Visual Branding"], 
+    //   image: "/images/Cover/Mobi.png", 
+    //   link: "https://www.instagram.com/stories/highlights/17870365740253517/", 
+    //   gallery: [
+    //     "/images/Gallery/Mobi/Mobi - 1.png",
+    //     "/images/Gallery/Mobi/Mobi - 2.png",
+    //     "/images/Gallery/Mobi/Mobi - 3.png",
+    //     "/images/Gallery/Mobi/Mobi - 4.png",
+    //     "/images/Gallery/Mobi/Mobi - 5.png",
+    //     "/images/Gallery/Mobi/Mobi - 6.png",
+    //     "/images/Gallery/Mobi/Mobi - 7.png"
+    //   ],
+    //   role: "Design Team Member",
+    //   year: "Desember 2024",
+    //   techStack: ["Figma"],
+    //   description: "Berkontribusi dalam tim desain untuk 'Moklet Bilingual Week', acara tahunan Bulan Bahasa Inggris yang diselenggarakan oleh English Language Prefect. Dengan mengusung tema karnaval dan maskot 'Mobi', tugas utama saya adalah memastikan seluruh materi visual tampil kohesif dan sesuai dengan arahan branding yang telah ditentukan.",
+    //   features: [
+    //     "Mascot Integration: Mengaplikasikan maskot 'Mobi' ke dalam berbagai media promosi.",
+    //     "Merchandise Design: Menyusun desain untuk kaos acara, lanyard, dan pernak-pernik merchandise lainnya.",
+    //     "Event Collaterals: Membuat bingkai photobooth dan aset visual pendukung suasana karnaval.",
+    //     "Digital Presence: Mendesain konten feed Instagram sebagai media informasi utama peserta."
+    //   ],
+    //   challenge: "Tantangan dalam proyek ini adalah manajemen tugas terhadap permintaan desain tambahan yang sering kali muncul secara mendadak. Hal ini menuntut tim untuk tetap menjaga fokus dan konsistensi kualitas desain di tengah jadwal produksi yang padat. Selain itu, hasil design feed IG yang telah saya buat belum sepenuhnya terpublish oleh tim Sosmed"
+    // },
     {
       id: 5,
       title: "Demo Day MGIP: Innovation Showcase",
@@ -251,31 +331,6 @@ export const portfolioData: { hero: HeroData; projects: Project[] } = {
       ],
       challenge: "Ini merupakan pertama kalinya saya menangani proses pembuatan logo secara formal dan menyeluruh. Tantangan utamanya adalah mempelajari pakem aturan standar dari Palang Merah Indonesia (PMI) agar tetap sinkron, sembari berusaha menyisipkan elemen unik yang menjadi ciri khas identitas siswa SMK Telkom Malang."
     },
-    {
-      id: 9,
-      title: "Explore Bromo: Your Ultimate Adventure Guide",
-      subtitle: "Interactive Tourism Platform",
-      category: ["Web Dev", "UI Design"], 
-      image: "/images/Cover/Bromo.png",
-      link: "https://www.figma.com/design/kGVo3mRWog4YL0t3Ap65Ls/Bromo-Trip?node-id=0-1&t=KVhs6s7d8QBvDImz-1", 
-      gallery: [
-        "/images/Gallery/Bromo/Bromo - 1.png",
-        "/images/Gallery/Bromo/Bromo - 2.png",
-        "/images/Gallery/Bromo/Bromo - 3.png",
-        "/images/Gallery/Bromo/Bromo - 4.png"
-      ],
-      role: "Frontend Developer",
-      year: "Desember 2025",
-      techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Leaflet Maps"],
-      description: "Platform pariwisata digital yang dirancang untuk memperkenalkan keindahan Taman Nasional Bromo Tengger Semeru. Website ini berfungsi sebagai panduan lengkap bagi wisatawan, mulai dari informasi rute, booking jeep online, hingga virtual tour sederhana.\n\nDesain difokuskan pada penggunaan tipografi yang bersih dan layout gambar yang immersive untuk menonjolkan keindahan alam Bromo.",
-      features: [
-        "Interactive Map: Peta titik wisata & spot sunrise.",
-        "Jeep Booking System: Formulir pemesanan terintegrasi.",
-        "Weather Widget: Info cuaca real-time di area pegunungan.",
-        "Multi-language Support (ID/EN)."
-      ],
-      challenge: "Tantangan terbesar adalah mengoptimalkan performa website (Core Web Vitals) yang memuat banyak aset gambar resolusi tinggi, agar tetap cepat diakses oleh wisatawan yang mungkin memiliki koneksi internet terbatas di area pegunungan."
-    },
     // {
     //   id: 10, 
     //   title: "Saraya: Memayu Hayuning Rubedo",
@@ -300,53 +355,6 @@ export const portfolioData: { hero: HeroData; projects: Project[] } = {
     //     "Print & Digital Assets: Poster promosi, banner, dan kebutuhan dekorasi visual acara."
     //   ],
     //   challenge: "Tantangan terbesar bukanlah pada teknis desain, melainkan pada **Leadership & Mentorship**. \n\nMayoritas anggota tim adalah rekan baru (calon pengurus OSIS), sehingga saya harus membangun *chemistry* tim dari nol, mengajarkan standar kerja kolaboratif di Figma, dan membimbing mereka agar tetap percaya diri dalam berkarya meski di bawah tekanan deadline acara."
-    // },
-    // {
-    //   id: 11, 
-    //   title: "Pupuk Smart: Modern Farming Ecosystems",
-    //   subtitle: "Inventory & Warehouse Management",
-    //   category: ["Web Dev", "Fullstack"],
-    //   image: "/images/Projects/pupuk-cover.jpg",
-    //   link: "#", 
-    //   gallery: [
-    //     "/images/Projects/pupuk-1.jpg",
-    //     "/images/Projects/pupuk-2.jpg"
-    //   ],
-    //   role: "Fullstack Developer",
-    //   year: "2024",
-    //   techStack: ["Laravel", "MySQL", "Bootstrap/Tailwind"], 
-    //   description: "Sistem manajemen stok dan distribusi pupuk berbasis web yang dirancang untuk kompetisi. Fokus utama aplikasi ini adalah pengelompokan gudang berdasarkan jenis produk untuk menjaga kualitas pupuk.\n\nSistem mengatur logika penyimpanan spesifik, misalnya Gudang A dikhususkan untuk Pupuk Kering, sedangkan Gudang B untuk Pupuk Basah, sehingga alur keluar-masuk barang menjadi lebih terorganisir dan minim kesalahan.",
-    //   features: [
-    //     "Multi-Location Warehouse: Manajemen lokasi gudang terpisah.",
-    //     "Product Categorization: Pemisahan stok Pupuk Basah & Kering.",
-    //     "Stock Flow: Pencatatan barang masuk (Inbound) & keluar (Outbound).",
-    //     "Dashboard Admin: Pantau ketersediaan stok di tiap lokasi secara real-time."
-    //   ],
-    //   challenge: "Tantangan terbesar adalah tekanan waktu (time constraint) karena proyek ini dikerjakan saat lomba. Saya harus mengimplementasikan logika manajemen stok yang cukup kompleks sambil mempelajari fitur-fitur baru Laravel secara otodidak di tengah kompetisi, yang membuat proses development terasa sangat intens."
-    // },
-    // {
-    //   id: 12,
-    //   title: "Job Seekers: Find Your Next Career",
-    //   subtitle: "Job Recruitment Platform (UKK)",
-    //   category: ["Mobile Dev", "Fullstack"],
-    //   image: "/images/Projects/job-cover.jpg",
-    //   link: "#", // Isi link demo/repo jika ada
-    //   gallery: [
-    //     "/images/Projects/job-1.jpg",
-    //     "/images/Projects/job-2.jpg",
-    //     "/images/Projects/job-3.jpg"
-    //   ],
-    //   role: "Fullstack Mobile Developer",
-    //   year: "2025",
-    //   techStack: ["Flutter (Dart)", "Laravel (Backend)", "MySQL", "REST API"],
-    //   description: "Aplikasi pencarian kerja yang dikembangkan sebagai proyek Uji Kompetensi Keahlian (UKK). Sistem ini menghubungkan pelamar kerja dengan perusahaan melalui aplikasi mobile yang intuitif.\n\nSisi Frontend dibangun menggunakan Flutter untuk performa native, sedangkan Backend menggunakan Laravel sebagai penyedia REST API yang menangani autentikasi, manajemen lowongan, dan status lamaran.",
-    //   features: [
-    //     "Swipe to Apply: Melamar kerja dengan interaksi modern.",
-    //     "CV Generator: Membuat CV standar otomatis dari profil pengguna.",
-    //     "Company Dashboard: Panel admin untuk HRD mengelola pelamar.",
-    //     "Real-time Status: Notifikasi update status lamaran (Diterima/Ditolak)."
-    //   ],
-    //   challenge: "Tantangan paling teknis adalah debugging 'Invisible Error' pada sisi Backend Laravel. Sempat terjadi kegagalan pemanggilan API tanpa pesan error yang jelas, yang ternyata disebabkan oleh urutan (ordering) definisi Route di `api.php`. Kesalahan posisi baris kode ini menyebabkan request tertukar/tidak dikenali, sebuah bug sepele namun sangat *tricky* untuk dilacak."
     // },
   ],
 };
