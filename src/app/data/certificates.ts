@@ -1,14 +1,14 @@
 export const certificatesData = [
-  {
-    id: 8,
-    category: "Web Dev",
-    title: "IT Specialist: Databases",
-    issuer: "Certiport",
-    date: "Valid until 2030",
-    description: "Sertifikasi keahlian spesialis basis data yang memvalidasi pemahaman fundamental desain database.",
-    image: "/images/Certificates/Certiport.jpg",
-    isDark: true
-  },
+  // {
+  //   id: 8,
+  //   category: "Web Dev",
+  //   title: "IT Specialist: Databases",
+  //   issuer: "Certiport",
+  //   date: "Valid until 2030",
+  //   description: "Sertifikasi keahlian spesialis basis data yang memvalidasi pemahaman fundamental desain database.",
+  //   image: "/images/Certificates/Certiport.jpg",
+  //   isDark: true
+  // },
   {
     id: 9,
     category: "Web Dev",
@@ -27,7 +27,7 @@ export const certificatesData = [
     date: "Sept 2025",
     description: "Dedikasi aktif sebagai Koordinator Anggota 10 OSIS SMK Telkom Malang masa bakti 2024/2025.",
     image: "/images/Certificates/Koordinator SIE-10.jpg",
-    isDark: true
+    isDark: false
   },
   {
     id: 2, 
@@ -37,7 +37,7 @@ export const certificatesData = [
     date: "April 2025",
     description: "Bertanggung jawab penuh memimpin koordinasi tim demi kesuksesan kompetisi MOPOCO 2025.",
     image: "/images/Certificates/Mopoco.jpg",
-    isDark: false 
+    isDark: true 
   },
   // {
   //   id: 3,
@@ -107,6 +107,6 @@ export const certificatesData = [
     date: "Nov 2025 - Mar 2026",
     description: "Menyelesaikan program magang dengan nilai A (Excelent) sebagai Intern Graphic Designer di DOT Indonesia.",
     image: "/images/Certificates/Sertifikat-Danadyaksa-Morello.jpg",
-    isDark: false
+    isDark: true
   },
 ];

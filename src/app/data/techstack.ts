@@ -1,4 +1,4 @@
 export const techStackData = [
   "Figma", "Adobe Illustrator", "After Effect", "Premiere Pro", "DaVinci Resolve",
-  "Laravel", "Flutter", "JavaScript"
+  "Laravel", "Flutter", "JavaScript", "TypeScript", "Next.js", "Tailwind CSS", "MySQL",
 ];

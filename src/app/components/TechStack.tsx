@@ -11,7 +11,7 @@ import {
   SiLaravel, 
   SiFlutter, 
   SiNextdotjs,
-  SiDavinciresolve 
+  SiDavinciresolve
 } from "react-icons/si";
 import { FaCode } from "react-icons/fa";
 
