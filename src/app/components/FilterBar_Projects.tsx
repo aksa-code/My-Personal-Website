@@ -13,21 +13,19 @@ const CATEGORIES = [
   "Fullstack"
 ];
 
-interface    FilterProjects {
+interface FilterBarProps {
   current: string;
   onFilterChange: (category: string) => void;
   className?: string;
 }
 
-const FilterBar: React.FC<   FilterProjects> = ({ current, onFilterChange, className = "" }) => {
+const FilterBar: React.FC<FilterBarProps> = ({ current, onFilterChange, className = "" }) => {
   return (
     <div className={`flex flex-wrap gap-2 ${className}`}>
       {CATEGORIES.map((cat) => (
         <button
           key={cat}
           type="button"
-          // Mencegah error hydration jika ada perbedaan render
-          suppressHydrationWarning={true} 
           onClick={() => onFilterChange(cat)}
           className={`
             px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 border

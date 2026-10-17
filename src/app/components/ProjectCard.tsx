@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -61,10 +62,12 @@ const ProjectCard: React.FC<CardProps> = ({ title, role, image, isDark, classNam
           
           <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-transform duration-500 group-hover:scale-[1.03]">
              {image ? (
-                <img
+                <Image
                   src={image}
                   alt={title}
-                  className="w-full h-full object-cover object-center select-none"
+                  fill
+                  sizes="(max-width: 768px) 85vw, (max-width: 1024px) 45vw, 380px"
+                  className="object-cover object-center select-none"
                 />
               ) : (
                 <div className={`w-full h-full opacity-30 blur-2xl ${isDark ? 'bg-blue-600' : 'bg-blue-200'}`}></div>

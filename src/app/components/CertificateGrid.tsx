@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion";
 import { FiAward, FiEye, FiCalendar, FiX } from "react-icons/fi";
 import { certificatesData } from '../data/certificates';
@@ -8,6 +9,16 @@ import CertificateFilter from './CertificateFilter';
 const CertificateGrid = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // Tutup modal dengan tombol Escape
+  useEffect(() => {
+    if (!selectedImage) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedImage(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [selectedImage]);
 
   const filteredCerts = certificatesData.filter((cert) => {
     if (activeFilter === "All") return true;
@@ -147,6 +158,9 @@ const CertificateGrid = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Pratinjau sertifikat"
             className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 cursor-zoom-out"
           >
             <motion.div
@@ -158,15 +172,20 @@ const CertificateGrid = () => {
             >
               <button
                 onClick={() => setSelectedImage(null)}
+                aria-label="Tutup pratinjau"
                 className="absolute -top-12 right-0 md:top-4 md:right-4 z-50 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors border border-white/20 backdrop-blur-md cursor-pointer"
               >
                 <FiX size={24} />
               </button>
-              <img
-                src={selectedImage}
-                alt="Certificate Evidence"
-                className="w-auto h-auto max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl border border-white/10"
-              />
+              <div className="relative w-full max-w-4xl h-[70vh] md:h-[78vh]">
+                <Image
+                  src={selectedImage}
+                  alt="Bukti sertifikat"
+                  fill
+                  sizes="(max-width: 768px) 95vw, 900px"
+                  className="object-contain drop-shadow-2xl"
+                />
+              </div>
             </motion.div>
           </motion.div>
         )}

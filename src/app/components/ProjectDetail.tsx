@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Calendar, User, Layers, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Project } from '../data/projects';
 
@@ -21,14 +21,14 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({ project })
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto Slide
+  // Auto Slide (timer reset setiap kali index berubah, termasuk klik manual)
   useEffect(() => {
     if (sliderImages.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [sliderImages.length]);
+  }, [sliderImages.length, currentIndex]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
@@ -102,29 +102,35 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({ project })
 
         {/* --- IMAGE SLIDER / CAROUSEL --- */}
         <div className="relative w-full aspect-video md:aspect-[21/9] rounded-3xl overflow-hidden shadow-xl shadow-gray-200 mb-12 bg-gray-100 group border border-gray-200">
-          <AnimatePresence mode='wait'>
+          {sliderImages.map((src, idx) => (
             <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, filter: "blur(5px)" }}
-              transition={{ duration: 0.7, ease: "easeInOut" }}
-              className="relative w-full h-full"
+              key={src}
+              initial={false}
+              animate={{
+                opacity: idx === currentIndex ? 1 : 0,
+                scale: idx === currentIndex ? 1 : 1.03,
+              }}
+              transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+              className="absolute inset-0 will-change-[opacity,transform]"
+              style={{ zIndex: idx === currentIndex ? 10 : 0 }}
             >
               <Image
-                src={sliderImages[currentIndex]}
-                alt={`Slide ${currentIndex + 1}`}
+                src={src}
+                alt={`${project.title} - Slide ${idx + 1}`}
                 fill
-                className="object-cover object-center"
-                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1024px"
+                className="object-cover object-center select-none"
+                priority={idx === 0}
+                draggable={false}
               />
             </motion.div>
-          </AnimatePresence>
+          ))}
 
           {sliderImages.length > 1 && (
             <>
               <button
                 onClick={prevSlide}
+                aria-label="Slide sebelumnya"
                 className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white text-gray-800 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -132,6 +138,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({ project })
 
               <button
                 onClick={nextSlide}
+                aria-label="Slide berikutnya"
                 className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white text-gray-800 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -142,6 +149,8 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({ project })
                   <button
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
+                    aria-label={`Ke slide ${idx + 1}`}
+                    aria-current={idx === currentIndex}
                     className={`w-2 h-2 rounded-full transition-all duration-300 shadow-sm ${
                         idx === currentIndex ? "bg-white w-6" : "bg-white/50 hover:bg-white/80"
                     }`}

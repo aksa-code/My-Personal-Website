@@ -85,7 +85,7 @@ const ProjectGrid = () => {
             className="col-span-full flex flex-col items-center justify-center text-center w-full py-12 px-4 border-2 border-dashed border-gray-200 rounded-2xl md:mx-0 mx-6"
           >
             <p className="text-gray-400 italic mb-2">
-              "Belum ada project public untuk kategori <strong>{filter}</strong>."
+              &ldquo;Belum ada project public untuk kategori <strong>{filter}</strong>.&rdquo;
             </p>
           </motion.div>
         )}

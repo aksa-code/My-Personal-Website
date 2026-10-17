@@ -1,14 +1,11 @@
 "use client";
 import React from 'react';
+import { certificatesData } from '../data/certificates';
 
-// --- ATUR KATEGORI MANUAL DISINI ---
+// Kategori diambil otomatis dari data, jadi tombol kosong tidak akan muncul
 const CATEGORIES = [
-  "All", 
-  "Leadership", 
-  "Committee", 
-  "Organization", 
-  "Web Dev",
-  "Workshop"
+  "All",
+  ...Array.from(new Set(certificatesData.map((cert) => cert.category))),
 ];
 
 interface FilterProps {

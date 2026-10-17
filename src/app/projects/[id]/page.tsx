@@ -1,11 +1,32 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 // Sesuaikan path import ini dengan struktur folder kamu
 import { portfolioData } from '../../data/projects'; 
 import { ProjectDetailView } from '../../components/ProjectDetail';
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
+}
+
+// Metadata unik per project (judul, deskripsi, canonical)
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = portfolioData.projects.find((p) => p.id.toString() === id);
+
+  if (!project) return {};
+
+  return {
+    title: project.title,
+    description: project.subtitle,
+    alternates: { canonical: `/projects/${id}` },
+    openGraph: {
+      type: 'article',
+      title: project.title,
+      description: project.subtitle,
+      url: `/projects/${id}`,
+    },
+  };
 }
 
 // Halaman ini berjalan di Server (Server Component)

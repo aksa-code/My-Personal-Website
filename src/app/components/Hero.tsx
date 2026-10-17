@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import { FiArrowRight, FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
 import { FaBehance } from "react-icons/fa";
@@ -70,9 +71,12 @@ const Hero = () => {
                 className="block md:hidden shrink-0" 
               >
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md bg-gray-100">
-                   <img
-                      src="/images/Hero/FOTO 3X4.png"
-                      alt="Profile Mobile"
+                   <Image
+                      src="/images/Hero/FOTO 3X4.webp"
+                      alt="Foto Danadyaksa Morello"
+                      width={64}
+                      height={64}
+                      sizes="64px"
                       className="w-full h-full object-cover"
                    />
                 </div>
@@ -142,10 +146,13 @@ const Hero = () => {
             className="hidden md:flex w-full md:w-[45%] justify-end relative p-8"
           >
             <div className="relative z-10 w-full max-w-[450px] aspect-[4/5] rounded-[40px] overflow-hidden bg-gray-100 border border-gray-200 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 ease-out">
-              <img
-                src="/images/Hero/FOTO 3X4.png"
-                alt="Profile"
-                className="w-full h-full object-cover"
+              <Image
+                src="/images/Hero/FOTO 3X4.webp"
+                alt="Foto Danadyaksa Morello"
+                fill
+                priority
+                sizes="450px"
+                className="object-cover"
               />
             </div>
 

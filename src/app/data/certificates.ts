@@ -6,7 +6,7 @@ export const certificatesData = [
   //   issuer: "Certiport",
   //   date: "Valid until 2030",
   //   description: "Sertifikasi keahlian spesialis basis data yang memvalidasi pemahaman fundamental desain database.",
-  //   image: "/images/Certificates/Certiport.jpg",
+  //   image: "/images/Certificates/Certiport.webp",
   //   isDark: true
   // },
   {
@@ -16,7 +16,7 @@ export const certificatesData = [
     issuer: "Universitas Dinamika",
     date: "Oct 2025",
     description: "Berhasil menjadi finalis dalam kompetisi Web Programming FITCOM 3.0 tingkat nasional.",
-    image: "/images/Certificates/WebDev.jpg",
+    image: "/images/Certificates/WebDev.webp",
     isDark: true
   },
   {
@@ -26,7 +26,7 @@ export const certificatesData = [
     issuer: "SMK Telkom Malang",
     date: "Sept 2025",
     description: "Dedikasi aktif sebagai Koordinator Anggota 10 OSIS SMK Telkom Malang masa bakti 2024/2025.",
-    image: "/images/Certificates/Koordinator SIE-10.jpg",
+    image: "/images/Certificates/Koordinator SIE-10.webp",
     isDark: false
   },
   {
@@ -36,7 +36,7 @@ export const certificatesData = [
     issuer: "SMK Telkom Malang",
     date: "April 2025",
     description: "Bertanggung jawab penuh memimpin koordinasi tim demi kesuksesan kompetisi MOPOCO 2025.",
-    image: "/images/Certificates/Mopoco.jpg",
+    image: "/images/Certificates/Mopoco.webp",
     isDark: true 
   },
   // {
@@ -46,7 +46,7 @@ export const certificatesData = [
   //   issuer: "SMK Telkom Malang",
   //   date: "Dec 2024",
   //   description: "Bagian kepanitiaan Moklet Exhibition, pameran karya inovasi dan kreativitas siswa SMK Telkom.",
-  //   image: "/images/Certificates/Moklet Exhibition.jpg",
+  //   image: "/images/Certificates/Moklet Exhibition.webp",
   //   isDark: false 
   // },
   // {
@@ -56,7 +56,7 @@ export const certificatesData = [
   //   issuer: "SMK Telkom Malang",
   //   date: "Nov 2024",
   //   description: "Peserta kegiatan Study Tiru OSIS guna bertukar wawasan dan meningkatkan manajemen organisasi.",
-  //   image: "/images/Certificates/Study Tiru.jpg",
+  //   image: "/images/Certificates/Study Tiru.webp",
   //   isDark: false
   // },
   // {
@@ -66,7 +66,7 @@ export const certificatesData = [
   //   issuer: "SMK Telkom Malang",
   //   date: "Aug 2024",
   //   description: "Berkontribusi sebagai panitia acara 'Pitulasan 2024' untuk memeriahkan Hari Kemerdekaan RI.",
-  //   image: "/images/Certificates/Pitulasan.jpg",
+  //   image: "/images/Certificates/Pitulasan.webp",
   //   isDark: true
   // },
   // {
@@ -76,7 +76,7 @@ export const certificatesData = [
   //   issuer: "SMK Telkom Malang",
   //   date: "June 2024",
   //   description: "Terlibat aktif sebagai panitia dalam acara seni dan hiburan sekolah 'Movibes'.",
-  //   image: "/images/Certificates/Movibes.jpg",
+  //   image: "/images/Certificates/Movibes.webp",
   //   isDark: true
   // },
   // {
@@ -86,7 +86,7 @@ export const certificatesData = [
   //   issuer: "SMK Telkom Malang",
   //   date: "Oct 2023",
   //   description: "Menyelesaikan pendidikan karakter (P4K) untuk membangun fondasi disiplin dan etika siswa.",
-  //   image: "/images/Certificates/P4K.jpg",
+  //   image: "/images/Certificates/P4K.webp",
   //   isDark: true
   // },
    {
@@ -96,7 +96,7 @@ export const certificatesData = [
     issuer: "DOT Indonesia",
     date: "Nov 2025 - Mar 2026",
     description: "Menyelesaikan program magang dengan prestasi terbaik di DOT Indonesia.",
-    image: "/images/Certificates/SERTIFIKAT-Best-Performance-Danadyaksa.jpg",
+    image: "/images/Certificates/SERTIFIKAT-Best-Performance-Danadyaksa.webp",
     isDark: false
   },
   {
@@ -106,7 +106,7 @@ export const certificatesData = [
     issuer: "DOT Indonesia",
     date: "Nov 2025 - Mar 2026",
     description: "Menyelesaikan program magang dengan nilai A (Excelent) sebagai Intern Graphic Designer di DOT Indonesia.",
-    image: "/images/Certificates/Sertifikat-Danadyaksa-Morello.jpg",
+    image: "/images/Certificates/Sertifikat-Danadyaksa-Morello.webp",
     isDark: true
   },
 ];

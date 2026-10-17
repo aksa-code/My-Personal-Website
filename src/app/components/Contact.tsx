@@ -37,8 +37,7 @@ const Contact = () => {
         .then(() => {
           toast.success("Pesan berhasil terkirim!");
           setForm({ name: '', email: '', message: '' });
-        }, (error) => {
-          console.log(error.text);
+        }, () => {
           toast.error("Gagal mengirim pesan. Silakan coba lagi.");
         })
         .finally(() => {
